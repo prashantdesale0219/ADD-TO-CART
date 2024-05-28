@@ -40,7 +40,7 @@ let searchByButton = document.getElementById("search-by-button");
 
 let productData =[]
 function fetchData(){
-    fetch("https://bk-json-server.onrender.com/pitches")
+    fetch("https://addto-cart.onrender.com/pitches")
     .then(res=>res.json()).then(data=>{
         productData = data;
         SingleCard(data)
@@ -92,7 +92,7 @@ pitchCreateBtn.addEventListener("click",()=>{
         image
     }
 
-    fetch("https://bk-json-server.onrender.com/pitches",{
+    fetch("https://addto-cart.onrender.com/pitches",{
         method: "POST",
         headers:{
             "Content-Type":"application/json"
@@ -119,7 +119,7 @@ document.addEventListener("click",(e)=>{
 })
 
 function DeleteBtn(id){
-    fetch(`https://bk-json-server.onrender.com/pitches/${id}`,{
+    fetch(`https://addto-cart.onrender.com/pitches/${id}`,{
         method: "DELETE",
     }).then((res)=>console.log(res))
     .then((data)=>{
@@ -162,7 +162,7 @@ document.addEventListener("click",(e)=>{
 })
 
 function PopulateForm(id){
-    fetch(`https://bk-json-server.onrender.com/pitches/${id}`) 
+    fetch(`https://addto-cart.onrender.com/pitches/${id}`) 
     .then((res)=>res.json())
     .then((data)=>{
         updatePitchIdInput.value= data.id
@@ -184,7 +184,7 @@ updatePitchBtn.addEventListener("click",()=>{
         founder: updatePitchfounderInput.value,
         category: updatePitchCategoryInput.value
     }
-    fetch(`https://bk-json-server.onrender.com/pitches/${updateData.id}`,{
+    fetch(`https://addto-cart.onrender.com/pitches/${updateData.id}`,{
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -208,7 +208,7 @@ updatePitchBtn.addEventListener("click",()=>{
         id: updatePricePitchId.value,
         price: updatePricePitchPrice.value
     }
-    fetch(`https://bk-json-server.onrender.com/pitches/${updateData.id}`,{
+    fetch(`https://addto-cart.onrender.com/pitches/${updateData.id}`,{
         method: "PATCH",
         headers: {
             "Content-Type": "application/json"
@@ -228,7 +228,7 @@ updatePitchBtn.addEventListener("click",()=>{
         let searchBy = searchBySelect.value
         let searchValue = searchByInput.value
         if(searchBy === "title"){
-            fetch(`https://bk-json-server.onrender.com/pitches?title=${searchValue}`)
+            fetch(`https://addto-cart.onrender.com/pitches?title=${searchValue}`)
             .then((res)=>res.json())
             .then((data)=>{
                 console.log(data)
