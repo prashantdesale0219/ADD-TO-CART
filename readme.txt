@@ -1,5 +1,4 @@
-MY VIDEO URL :-https://drive.google.com/file/d/1qH2YdxpfMTwnz6PYiobTEwxc37W_mC1U/view?usp=sharing
-MY WEBSITE LINK:-https://bk-sharktank.netlify.app/
+
 
 
 
